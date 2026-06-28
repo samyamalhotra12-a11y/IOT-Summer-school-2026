@@ -1,0 +1,12 @@
+Microcontroller vs Microprocessor
+
++-----------------------+-------------------------------+-----------------------------------------+
+| Parameter             | Microcontroller (Arduino UNO) | Microprocessor (Raspberry Pi)           |
++-----------------------+-------------------------------+-----------------------------------------+
+| CPU Speed             | 16 MHz                        | 1.5 GHz to 2.4 GHz (Multi-core)         |
+| On-chip RAM           | 2 KB (SRAM)                   | 1 GB to 8 GB                            |
+| On-chip Flash         | 32 KB                         | None on-chip (Uses MicroSD card)        |
+| Operating System      | None (Runs continuous loop)   | Linux (Raspberry Pi OS, Ubuntu, etc.)   |
+| Typical Use Case      | Hardware control, sensors     | Complex computing, computer vision      |
+| Power Consumption     | Very Low (~50mA at 5V)        | High (~3A at 5V, requires adapter)      |
++-----------------------+-------------------------------+-----------------------------------------+
