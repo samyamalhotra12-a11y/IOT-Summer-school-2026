@@ -2,7 +2,6 @@
 ​This repository contains the code and documentation for the foundational "LED Blink" project. The goal of this project is to verify the hardware setup, test the development environment, and demonstrate basic digital output control by making an LED turn on and off at regular intervals.
 ​
 Hardware Required
-
 ​Arduino Uno 
 ​LED (Light Emitting Diode, any color)
 ​Resistor (220Ω)
