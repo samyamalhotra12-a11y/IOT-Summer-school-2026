@@ -1,5 +1,5 @@
 const int ledPin = LED_BUILTIN;
-int blinkCount = 0; // Tracks total blinks performed
+int blinkCount = 0; 
 
 void setup() {
   pinMode(ledPin, OUTPUT);
@@ -10,8 +10,7 @@ void setup() {
 void loop() {
   if (Serial.available() > 0) {
     String cmd = Serial.readStringUntil('\n');
-    cmd.trim(); // Remove any extra spaces or hidden characters
-
+    cmd.trim(); 
     if (cmd == "LED_ON") {
       digitalWrite(ledPin, HIGH);
       Serial.println("OK: LED is ON");
@@ -21,12 +20,12 @@ void loop() {
       Serial.println("OK: LED is OFF");
     } 
     else if (cmd.startsWith("BLINK_")) {
-      // Get the character after 'BLINK_' (which is at index 6)
+      
       char xChar = cmd.charAt(6); 
       
-      // Validate that it is a digit between 1 and 9
+     
       if (xChar >= '1' && xChar <= '9') {
-        int x = xChar - '0'; // Convert char to integer
+        int x = xChar - '0'; 
         for (int i = 0; i < x; i++) {
           digitalWrite(ledPin, HIGH); delay(500);
           digitalWrite(ledPin, LOW); delay(500);
