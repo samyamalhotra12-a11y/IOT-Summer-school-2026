@@ -1,6 +1,8 @@
 # LED Blink Project
 
+
 This repository contains the code and documentation for the foundational "LED Blink" project. The goal of this project is to verify the hardware setup, test the development environment, and demonstrate basic digital output control by making an LED turn on and off at regular intervals.
+
 
 ## Hardware Required
 * Arduino Uno
@@ -11,12 +13,16 @@ This repository contains the code and documentation for the foundational "LED Bl
 * Jumper wires
 * USB data cable
 
+
+
 ## Circuit Diagram Description
 * Connect the LED anode (+) to Arduino digital pin 13 through a 220 Ω resistor. 
 * Connect the LED cathode (-) to GND. 
 * Connect one outer pin of the potentiometer to 5V. 
 * Connect the opposite outer pin of the potentiometer to GND. 
 * Connect the middle (wiper) pin of the potentiometer to analog pin A0.
+
+  
 
 ## How to Upload Code
 1. Connect the Arduino Uno to the computer using a USB cable. 
@@ -28,8 +34,13 @@ This repository contains the code and documentation for the foundational "LED Bl
 7. Click the Upload button to upload the program to the Arduino. 
 8. Open the Serial Monitor (9600 baud) to view the blink count.
 
+   
+
 ## Expected Output 
 The LED blinks continuously. The potentiometer changes the blinking speed. The Serial Monitor displays: Blink count: 1 Blink count: 2 Blink count: 3 ...
+
+
+
 
 ## Troubleshooting Tips
 * Verify that the correct Arduino board and COM port are selected. 
