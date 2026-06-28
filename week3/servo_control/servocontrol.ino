@@ -1,4 +1,4 @@
-
+#include <Servo.h>
 Servo myServo;
 
 const int potPin = A0;
