@@ -1,0 +1,57 @@
+ What is sensor calibration and why is it important in IoT systems? How would you calibrate an analog soil moisture sensor to give accurate percentage readings? Describe the two-point calibration method.
+
+Sensor Calibration
+Sensor calibration is the process of adjusting a sensor's readings so that they match the actual physical value being measured. It helps eliminate errors caused by manufacturing differences, aging, temperature, or environmental conditions.
+
+Why is calibration important in IoT systems?
+Calibration is important because it:
+Improves measurement accuracy.
+Ensures consistent and reliable sensor readings.
+Reduces measurement errors and false alarms.
+Increases the reliability of IoT automation and decision-making.
+Helps different sensors produce comparable results.
+
+
+Calibrating an Analog Soil Moisture Sensor
+An analog soil moisture sensor gives a raw analog value (typically 0–1023 when using a 10-bit ADC). These values differ from one sensor to another, so calibration is required to convert them into accurate moisture percentages.
+
+Steps
+Measure the dry value
+Keep the sensor completely dry (in air).
+Record the analog reading.
+
+Example:
+Dry reading = 850
+Measure the wet value
+Insert the sensor into fully saturated soil or water.
+Record the analog reading.
+
+Example:
+Wet reading = 350
+Map the readings to percentage
+Dry reading corresponds to 0% moisture.
+Wet reading corresponds to 100% moisture.
+
+Convert any reading between these limits into a percentage.
+Example:
+Sensor Reading	Moisture (%)
+850	0%
+600	50%
+350	100%
+
+
+Two-Point Calibration Method
+The two-point calibration method uses two known reference points to establish the measurement range.
+For a soil moisture sensor:
+Point 1 (Dry Reference):
+Sensor in dry air or completely dry soil.
+Assigned 0% moisture.
+Point 2 (Wet Reference):
+Sensor in water or fully saturated soil.
+Assigned 100% moisture.
+After recording these two values, every intermediate reading is converted into a percentage using linear mapping.
+For example:
+Dry value = 850
+Wet value = 350
+
+If the sensor reads 600, it represents approximately 50% soil moisture.
