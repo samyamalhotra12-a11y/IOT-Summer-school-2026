@@ -142,7 +142,7 @@ Grow Light  : ON
 ```
 
 ---
-
+wokwi simulation link: https://drive.google.com/file/d/1FmttuZ6T5PdhQls99CRdEa3p-FfSzVOS/view?usp=sharing
 
 
 ## Author
