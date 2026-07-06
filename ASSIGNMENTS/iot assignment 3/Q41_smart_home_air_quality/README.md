@@ -117,9 +117,9 @@ GND--------------->| All GND Connected   |
 
 | Difference from Baseline | Status | LED | Buzzer |
 |--------------------------|--------|-----|---------|
-| Less than 100 | SAFE | Green | OFF |
-| 101 – 299 | MODERATE | Yellow | 1000 Hz short beep |
-| 300 or above | DANGER | Red | Continuous 2000 Hz alarm |
+| Less than 80 | SAFE | Green | OFF |
+| 80 – 249 | MODERATE | Yellow | 1000 Hz short beep |
+| 250 or above | DANGER | Red | Continuous 2000 Hz alarm |
 
 ---
 
@@ -164,4 +164,3 @@ Timestamp, MQ-2 Value, DHT11 Temp, DHT11 Humidity, Severity Level
 # Author
 
 **Samya Malhotra**  
-Electronics and Communication Engineering (ECE)
