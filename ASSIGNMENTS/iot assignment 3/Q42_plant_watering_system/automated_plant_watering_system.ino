@@ -11,7 +11,7 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 const char* WIFI_SSID = "Wokwi-GUEST";
 const char* WIFI_PASSWORD = "";
 
-const char* API_KEY = "api";
+const char* API_KEY = "0da16eb27b38ebcb47872677d63a031f";
 const char* CITY = "Jammu";
 
 // ============================
@@ -19,7 +19,7 @@ const char* CITY = "Jammu";
 // ============================
 
 const char* SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxQfNxqRhtendVamCUDYfOi6LHSMaN66iQN0LCtzsJgsLIEQPXTO0mr9dy_BVrfS7aQ/exec";
+"https://script.google.com/macros/s/AKfycbwCsctpyn6DTIgiTdhVewD6Qa5h-0MNqnmbybOul202vYL2QLqbYe5CrY164mPQOtK0bQ/exec";
 
 
 
