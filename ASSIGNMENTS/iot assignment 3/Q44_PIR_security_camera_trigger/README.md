@@ -1,26 +1,26 @@
 # PIR-Based Smart Security Alert System using ESP32
 
-## 📌 Overview
+##  Overview
 
 The PIR-Based Smart Security Alert System is an IoT project developed using the ESP32 microcontroller and a PIR motion sensor. The system detects human movement and responds with visual and audio alerts using LEDs and a buzzer. It is designed to simulate a basic home or office security system that activates only during a specified time period and prevents repeated alarms using a cooldown mechanism.
 
 ---
 
-# 🎯 Problem Statement
+#  Problem Statement
 
 Unauthorized entry into homes, offices, or restricted areas can lead to security risks. Conventional security systems are often expensive and may require professional installation. There is a need for a simple, low-cost, and programmable motion detection system that can monitor an area and immediately alert users whenever movement is detected.
 
 ---
 
-# 💡 Solution Approach
+#  Solution Approach
 
 This project uses a PIR (Passive Infrared) sensor to continuously monitor motion in its surroundings. When motion is detected, the ESP32 checks whether the system is currently within the configured active time window.
 
 If the system is active, it performs a three-stage alert sequence:
 
-- 🟢 Green LED with a short buzzer beep
-- 🟡 Yellow LED with a medium buzzer beep
-- 🔴 Red LED with a long buzzer beep
+-  Green LED with a short buzzer beep
+-  Yellow LED with a medium buzzer beep
+-  Red LED with a long buzzer beep
 
 The buzzer uses ESP32 PWM (LEDC) to generate different sound frequencies, creating an escalating alert effect. After each detection, a cooldown period prevents multiple alarms from being triggered by the same motion event.
 
@@ -28,7 +28,7 @@ All activities are displayed on the Serial Monitor for monitoring and debugging.
 
 ---
 
-# ✨ Features
+#  Features
 
 - ✅ Motion detection using PIR sensor
 - ✅ Three-level LED alert indication
@@ -40,7 +40,7 @@ All activities are displayed on the Serial Monitor for monitoring and debugging.
 
 ---
 
-# 🧰 Hardware Required
+#  Hardware Required
 
 - ESP32 Development Board
 - PIR Motion Sensor
@@ -54,7 +54,7 @@ All activities are displayed on the Serial Monitor for monitoring and debugging.
 
 ---
 
-# 🔌 Circuit Connections
+#  Circuit Connections
 
 | Component | ESP32 Pin |
 |-----------|-----------|
@@ -68,7 +68,7 @@ All activities are displayed on the Serial Monitor for monitoring and debugging.
 
 ---
 
-# 📊 Circuit Diagram
+#  Circuit Diagram
 
 ```
                  ESP32
@@ -89,7 +89,7 @@ GPIO21 -----| Red LED          |
 
 ---
 
-# ⚙️ Working Principle
+#  Working Principle
 
 1. ESP32 initializes all peripherals.
 2. PIR sensor continuously monitors motion.
@@ -104,7 +104,7 @@ GPIO21 -----| Red LED          |
 
 ---
 
-# ⏰ Time Window Configuration
+#  Time Window Configuration
 
 The active monitoring period can be changed using the Serial Monitor.
 
@@ -126,21 +126,21 @@ If no time window is configured, the security system remains active throughout t
 
 ---
 
-# 🔊 Alert System
+#  Alert System
 
 The buzzer is controlled using ESP32 LEDC PWM.
 
 Alert sequence:
 
-- 🟢 Low alert → Short beep
-- 🟡 Medium alert → Medium beep
-- 🔴 High alert → Long beep
+-  Low alert → Short beep
+-  Medium alert → Medium beep
+-  High alert → Long beep
 
 Different frequencies create a realistic security alarm effect.
 
 ---
 
-# 📟 Sample Serial Output
+#  Sample Serial Output
 
 ```
 PIR Security System Ready
@@ -156,14 +156,14 @@ Cooldown Started
 
 ---
 
-# 📚 Libraries Used
+#  Libraries Used
 
 - ESP32 Arduino Core (Built-in)
 - LEDC PWM Functions (Built-in)
 
 ---
 
-# 👩‍💻 Author
+#  Author
 
 **Samya Malhotra**
 
