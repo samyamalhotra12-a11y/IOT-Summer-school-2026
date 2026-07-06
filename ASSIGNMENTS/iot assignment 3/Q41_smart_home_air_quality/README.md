@@ -1,4 +1,4 @@
-# Smart Home Air Quality Monitor using ESP32
+# Smart Home Air Quality Monitor 
 
 ## Problem Statement
 
