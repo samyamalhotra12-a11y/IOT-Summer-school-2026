@@ -117,19 +117,7 @@ GND--------------->| All GND Connected   |
 
 ---
 
-# Serial Monitor Output
 
-The readings are printed in CSV format.
-
-```
-Timestamp, Gas(PPM), Temp(C), Humidity(%), Status
-
-00:02, 820 ppm, 25.4 C, 46.5%, SAFE
-00:04, 2105 ppm, 25.6 C, 47.0%, MODERATE
-00:06, 3680 ppm, 25.8 C, 47.3%, DANGER
-```
-
----
 
 # Features
 
