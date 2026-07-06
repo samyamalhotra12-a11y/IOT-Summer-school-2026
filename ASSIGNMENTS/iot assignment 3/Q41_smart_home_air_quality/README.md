@@ -144,6 +144,8 @@ GND--------------->| All GND Connected   |
 
 ---
 
+wokwi link :https://wokwi.com/projects/468777216502628353
+
 
 # Author
 
