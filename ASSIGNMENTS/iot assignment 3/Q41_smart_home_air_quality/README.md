@@ -144,6 +144,8 @@ GND--------------->| All GND Connected   |
 
 ---
 
+# wokwi link: https://wokwi.com/projects/new/esp32
+
 # Author
 
 **Samya Malhotra**
