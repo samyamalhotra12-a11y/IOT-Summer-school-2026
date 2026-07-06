@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-A family in Milan (Europe) uses a wood-burning fireplace during winter, which can increase indoor smoke and carbon monoxide (CO) levels. The objective of this project is to design an IoT-based Smart Home Air Quality Monitoring System that continuously monitors indoor air quality using an MQ-2 gas sensor along with temperature and humidity using a DHT22 sensor. The system provides visual and audible alerts based on air quality and continues working even without an internet connection.
+Indoor air pollution caused by smoke, LPG leakage, and combustible gases can affect human health and safety. The objective of this project is to design an ESP32-based Smart Home Air Quality Monitoring System that continuously monitors indoor gas concentration using an MQ-2 gas sensor along with temperature and humidity using a DHT22 sensor. The system provides visual and audible alerts according to the detected air quality and operates completely offline without requiring an internet connection.
 
 ---
 
@@ -10,17 +10,17 @@ A family in Milan (Europe) uses a wood-burning fireplace during winter, which ca
 
 This project uses an ESP32 microcontroller to continuously monitor indoor environmental conditions.
 
-- The **MQ-2 sensor** measures smoke/gas concentration.
-- During startup, the ESP32 performs **automatic calibration** by taking 30 readings after a 10-second warm-up period to calculate a baseline value.
-- The current gas value is compared with the baseline to determine the air quality.
-- A **DHT22 sensor** measures temperature and humidity.
-- Depending on the detected gas level:
-  - Green LED indicates **Safe** condition.
-  - Yellow LED indicates **Moderate** smoke.
-  - Red LED indicates **Dangerous** smoke level.
-- The buzzer generates different alarms according to the severity.
-- Sensor readings are logged in **CSV format** on the Serial Monitor for easy analysis.
-- Since all processing is performed locally on the ESP32, the system operates normally even if Wi-Fi or the internet is unavailable.
+- The MQ-2 gas sensor detects smoke and combustible gases.
+- The analog sensor value is converted into an estimated gas concentration (pseudo PPM).
+- A DHT22 sensor measures temperature and humidity.
+- The ESP32 compares the gas concentration with predefined threshold values.
+- Depending on the detected air quality:
+  - Green LED indicates **SAFE** condition.
+  - Yellow LED indicates **MODERATE** condition.
+  - Red LED indicates **DANGER** condition.
+- A buzzer generates different warning sounds according to the severity level.
+- Sensor readings are displayed in CSV format on the Serial Monitor.
+- The entire system works locally on the ESP32 without requiring Wi-Fi or cloud connectivity.
 
 ---
 
@@ -84,7 +84,7 @@ This project uses an ESP32 microcontroller to continuously monitor indoor enviro
 
 ---
 
-## Circuit Connection Overview
+# Circuit Connection Overview
 
 ```
                    +----------------------+
@@ -107,19 +107,13 @@ GND--------------->| All GND Connected   |
 
 # Working Logic
 
-### Calibration
-
-- ESP32 waits for **10 seconds** to stabilize the MQ-2 sensor.
-- It then takes **30 analog readings**.
-- The average of these readings is stored as the **baseline** gas value.
-
 ### Air Quality Thresholds
 
-| Difference from Baseline | Status | LED | Buzzer |
-|--------------------------|--------|-----|---------|
-| Less than 80 | SAFE | Green | OFF |
-| 80 – 249 | MODERATE | Yellow | 1000 Hz short beep |
-| 250 or above | DANGER | Red | Continuous 2000 Hz alarm |
+| Gas Concentration (PPM) | Status | LED | Buzzer |
+|-------------------------|--------|-----|---------|
+| Less than 1500 | SAFE | Green | OFF |
+| 1500 – 2999 | MODERATE | Yellow | Short 1000 Hz Beep |
+| 3000 and Above | DANGER | Red | Continuous 2000 Hz Alarm |
 
 ---
 
@@ -128,39 +122,40 @@ GND--------------->| All GND Connected   |
 The readings are printed in CSV format.
 
 ```
-Timestamp, MQ-2 Value, DHT11 Temp, DHT11 Humidity, Severity Level
+Timestamp, Gas(PPM), Temp(C), Humidity(%), Status
 
-00:02, 315 ppm, 24.3°C, 46.5%, SAFE
-00:04, 402 ppm, 24.4°C, 47.0%, MODERATE
-00:06, 690 ppm, 24.6°C, 46.8%, DANGER
+00:02, 820 ppm, 25.4 C, 46.5%, SAFE
+00:04, 2105 ppm, 25.6 C, 47.0%, MODERATE
+00:06, 3680 ppm, 25.8 C, 47.3%, DANGER
 ```
 
 ---
 
 # Features
 
-- Automatic MQ-2 sensor calibration
-- Real-time smoke/gas monitoring
-- Temperature and humidity monitoring
+- Real-time gas monitoring
+- Temperature monitoring
+- Humidity monitoring
 - RGB LED air quality indication
 - Three-level alert system
 - Buzzer warning according to severity
 - CSV logging through Serial Monitor
-- Fully offline operation (No Wi-Fi required)
+- Offline operation (No Wi-Fi required)
 
 ---
 
 # Future Improvements
 
-- Bluetooth notification to smartphone
-- OLED/LCD display for live readings
-- Cloud data logging
+- OLED/LCD display
+- Bluetooth notifications
 - Mobile application
+- Cloud data logging
+- Firebase integration
 - Email/SMS emergency alerts
-- CO sensor integration for higher accuracy
+- Additional gas sensors for AQI calculation
 
 ---
 
 # Author
 
-**Samya Malhotra**  
+**Samya Malhotra**
