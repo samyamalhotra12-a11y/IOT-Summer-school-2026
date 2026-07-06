@@ -146,7 +146,7 @@ GND--------------->| All GND Connected   |
 
 
 
-simulation video link: https://drive.google.com/file/d/1eeA5FZWAKzKCU_tO1mDll-Ujfk76jLzI/view?usp=sharing
+simulation video link: https://drive.google.com/file/d/1WvItqQGrN2Vy2nEp_phRDnRbuXVTaf6O/view?usp=sharing
 
 # Author
 
