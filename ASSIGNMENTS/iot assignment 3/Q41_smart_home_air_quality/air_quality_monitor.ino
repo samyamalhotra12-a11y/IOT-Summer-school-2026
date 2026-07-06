@@ -13,17 +13,14 @@ DHT dht(DHTPIN, DHTTYPE);
 #define BLUE_PIN 27
 #define BUZZER 14
 
-int baseline = 0;
-
-
 void setColor(bool r, bool g, bool b) {
-  
   digitalWrite(RED_PIN, r);
   digitalWrite(GREEN_PIN, g);
   digitalWrite(BLUE_PIN, b);
 }
 
 void setup() {
+
   Serial.begin(115200);
   dht.begin();
 
@@ -32,75 +29,69 @@ void setup() {
   pinMode(BLUE_PIN, OUTPUT);
   pinMode(BUZZER, OUTPUT);
 
-  Serial.println("Stabilizing MQ-2... (10 sec)");
-  delay(10000);   
-  int sum = 0;
-  for (int i = 0; i < 30; i++) {
-    sum += analogRead(MQ2_PIN);
-    delay(200);
-  }
-  baseline = sum / 30;
-
-  Serial.print("Baseline: ");
-  Serial.println(baseline);
-
-
-  Serial.println("Timestamp, MQ-2 Value, DHT11 Temp, DHT11 Humidity, Severity Level");
+  Serial.println("Timestamp, Gas(PPM), Temp(C), Humidity(%), Status");
 }
-
 
 void loop() {
 
   int gasRaw = analogRead(MQ2_PIN);
-  int diff = gasRaw - baseline;
+
+  int gasPPM = map(gasRaw, 0, 4095, 0, 5000);
 
   float temp = dht.readTemperature();
   float hum = dht.readHumidity();
 
   if (isnan(temp) || isnan(hum)) {
-    Serial.println("DHT ERROR");
+    Serial.println("DHT Error!");
     delay(2000);
     return;
   }
 
   String status;
 
+  if (gasPPM < 1500) {
 
-  if (diff < 80) {
     status = "SAFE";
-    setColor(LOW, HIGH, LOW);  
+
+    setColor(LOW, HIGH, LOW);     
     noTone(BUZZER);
+
   }
 
-  else if (diff < 250) {
+  else if (gasPPM < 3000) {
+
     status = "MODERATE";
-    setColor(HIGH, HIGH, LOW);  
+
+    setColor(HIGH, HIGH, LOW);
 
     tone(BUZZER, 1000);
     delay(200);
     noTone(BUZZER);
+
   }
 
   else {
-    status = "DANGER";
-    setColor(HIGH, LOW, LOW);  
 
+    status = "DANGER";
+
+    setColor(HIGH, LOW, LOW);     
     tone(BUZZER, 2000);
+
   }
 
-  int seconds = millis() / 1000;
-  int mins = seconds / 60;
-  int secs = seconds % 60;
+  int sec = millis() / 1000;
+  int min = sec / 60;
+  sec %= 60;
 
   char timeStr[6];
-  sprintf(timeStr, "%02d:%02d", mins, secs);
+  sprintf(timeStr, "%02d:%02d", min, sec);
 
   Serial.print(timeStr);
   Serial.print(", ");
-  Serial.print(gasRaw);
+  Serial.print(gasPPM);
   Serial.print(" ppm, ");
   Serial.print(temp);
-  Serial.print("°C, ");
+  Serial.print(" C, ");
   Serial.print(hum);
   Serial.print("%, ");
   Serial.println(status);
