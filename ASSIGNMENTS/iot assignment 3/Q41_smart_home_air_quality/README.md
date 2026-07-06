@@ -144,7 +144,6 @@ GND--------------->| All GND Connected   |
 
 ---
 
-wokwi link :https://wokwi.com/projects/468777216502628353
 
 
 simulation video link: https://drive.google.com/file/d/1eeA5FZWAKzKCU_tO1mDll-Ujfk76jLzI/view?usp=sharing
