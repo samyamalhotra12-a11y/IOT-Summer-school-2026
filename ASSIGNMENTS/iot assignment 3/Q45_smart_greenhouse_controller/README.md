@@ -1,4 +1,4 @@
-# Smart Greenhouse Automation System using ESP32
+# Smart Greenhouse Controller
 
 ## Problem Statement
 
