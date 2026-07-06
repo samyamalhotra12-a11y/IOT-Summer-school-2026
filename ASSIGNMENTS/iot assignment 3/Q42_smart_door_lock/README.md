@@ -1,12 +1,6 @@
 # Smart Door Lock System with OTP (ESP32 + Keypad + LCD + Servo)
 
-## 📌 Project Overview
 
-This project is an IoT-based Smart Door Lock System that replaces traditional keys with a secure OTP-based authentication mechanism. It is built using an ESP32 microcontroller and simulates a real-world smart access control system using a 4x4 keypad, 16×2 I2C LCD display, and SG90 servo motor.
-
-The system first asks the user to enter a 4-digit User ID. After the ID is entered, a random 6-digit OTP is generated and displayed on the Serial Monitor. The user must enter the correct OTP within 30 seconds to unlock the door. If the OTP is incorrect or expires, access is denied.
-
----
 
 # 📌 Problem Statement
 
@@ -147,23 +141,7 @@ END
 
 ---
 
-# 💻 How to Run in Wokwi
 
-1. Open **https://wokwi.com**
-2. Create a new **ESP32 Project**.
-3. Add the following components:
-   - ESP32 DevKit
-   - 4×4 Matrix Keypad
-   - 16×2 LCD (I2C)
-   - SG90 Servo Motor
-4. Copy and paste the code into `main.ino`.
-5. Start the simulation.
-6. Open the Serial Monitor.
-7. Enter a 4-digit User ID using the keypad.
-8. Copy the OTP displayed in the Serial Monitor.
-9. Enter the OTP using the keypad to unlock the door.
-
----
 
 # 📺 Sample Output
 
