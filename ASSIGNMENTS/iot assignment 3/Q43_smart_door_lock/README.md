@@ -179,3 +179,5 @@ OTP EXPIRED
 ----------------------
 LOG: FAILED ENTRY
 ```
+
+simulation video link: https://drive.google.com/file/d/1I9NkNrogdxLsRLvuAITnCAAII4b3925u/view?usp=sharing
